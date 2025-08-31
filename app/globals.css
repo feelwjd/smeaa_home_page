@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{ @apply bg-gray-50 text-gray-900;}
+
+/* === 초기 페인트 깜빡임 방지 === */
+html:not([data-app-mounted]) main { 
+  opacity: 0;
+}
+[data-app-mounted] main {
+  transition: opacity .38s cubic-bezier(.22,1,.36,1);
+}
+
+
+html, body { max-width: 100%; overflow-x: hidden; }
+/* --- 안전 기본값: 가로 확장 방지 / 콘텐츠는 줄어들 수 있게 --- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { width:100%; max-width:100%; overflow-x: clip; } /* 모바일 가로 스크롤 차단 */
+img, video, svg, canvas { max-width:100%; height:auto; }
+
+/* flex/grid의 모든 직계 자식은 가로로 줄어들 수 있게 (핵심!) */
+.flex > *, .grid > * { min-width: 0; }
+
+/* 주요 문서 컨테이너는 가로 클램프 */
+main, article, section, nav { max-width:100%; }
+
+/* 수평 칩/탭에 쓸 유틸리티 (필요한 곳에 클래스만 붙이면 됨) */
+.h-scroll {
+  display:flex; flex-wrap:nowrap; gap:.5rem;
+  overflow-x:auto; overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch; scroll-behavior:smooth;
+  scrollbar-width:none; /* Firefox */
+}
+.h-scroll::-webkit-scrollbar { display:none; } /* WebKit */
+.h-scroll > * { flex:0 0 auto; } /* 각 칩/탭은 줄바꿈 금지 */
+.clamp-x { min-width:0; width:100%; max-width:100%; overflow-x:hidden; } /* 부모 폭 강제 클램프 */
