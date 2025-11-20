@@ -111,9 +111,9 @@ function TeamCard(m: Member) {
         )}
         {m.blogHref && (
           <div className="text-center">
-            <Link href={m.blogHref} className={`inline-block w-full rounded-md ${TOKENS.btnBg} ${TOKENS.btnText} py-2 text-sm font-semibold shadow-sm`}>
+            <a href={m.blogHref} className={`inline-block w-full rounded-md ${TOKENS.btnBg} ${TOKENS.btnText} py-2 text-sm font-semibold shadow-sm`}>
               {m.blogLabel || "블로그 바로가기"}
-            </Link>
+            </a>
           </div>
         )}
       </div>

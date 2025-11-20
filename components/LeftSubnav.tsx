@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import type { Category } from '@/data/categories';
+import type { Route } from 'next';
 
 export default function LeftSubnav({ category, currentSub }: { category: Category; currentSub: string; }) {
   const pathname = usePathname();
@@ -12,7 +13,7 @@ export default function LeftSubnav({ category, currentSub }: { category: Categor
       <nav className="border rounded-2xl p-3 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm">
         <ul className="space-y-1">
           {subs.map((sub) => {
-            const href = `/services/${category.slug}/${sub.slug}`;
+            const href = (`/services/${category.slug}/${sub.slug}`) as Route;
             const active = pathname === href || currentSub === sub.slug;
             return (
               <li key={sub.slug}>
