@@ -7,7 +7,7 @@ import RootBackgroundVideo from "@/components/RootBackgroundVideo";
 import FitViewportMain from "@/components/FitViewportMain";
 
 export const metadata = {
-  title: "중소기업행정플러스센터",
+  title: "행정사합동사무소",
   description: "기업 인증·인허가·조달 전문가 홈페이지",
 };
 
@@ -50,7 +50,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <nav className="ml-auto flex gap-4 text-sm">
               <Link href="/services">서비스</Link>
               <Link href="/team">대표행정사</Link>
-              <Link href="/blog">블로그</Link>
               <Link href="/contact" className="font-semibold">문의</Link>
             </nav>
           </div>
@@ -61,7 +60,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <footer className="relative z-10 mt-20 border-t bg-white">
           <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-600">
-            © {new Date().getFullYear()} 중소기업행정플러스센터
+            © {new Date().getFullYear()} 행정사합동사무소
           </div>
         </footer>
         {/* 하이드레이션 직후, 숨김 해제 → 1회 페이드인 */}

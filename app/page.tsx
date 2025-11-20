@@ -15,12 +15,25 @@ export default function Home() {
       <div className="space-y-12">
       <Slider
         slides={[
-          { src: "/images/hero-1.jpg" },
-          { src: "/images/hero-2.jpg" },
-          { src: "/images/hero-3.jpg" },
+          {
+            src: "/images/hero-1.jpg",
+            headline: `SME 행정사 합동사무소에 오신 것을\n진심으로 환영합니다.`,
+            subline: "기업 행정 전 과정을 원스톱으로 지원합니다.",
+          },
+          {
+            src: "/images/hero-2.jpg",
+            headline: "성공 비즈니스를 위한 최적의\n행정 솔루션을 제공합니다.",
+            subline: "기업 행정 전 과정을 원스톱으로 지원합니다.",
+          },
+          {
+            src: "/images/hero-3.jpg",
+            headline: "SME 만의 전문성과 문제 해결 능력 그리고\n신뢰할 수 있는 파트너로서의 역할에 최선을 다하겠습니다.",
+            subline: "기업 행정 전 과정을 원스톱으로 지원합니다.",
+          },
         ]}
         autoMs={7000}
         withOverlayText
+        // ↓ 아래 두 prop은 '슬라이드별 텍스트가 없을 때'의 기본값으로만 쓰입니다.
         headline={`SME 행정사 합동사무소에 오신 것을\n진심으로 환영합니다.`}
         subline="다양한 기업 행정 서비스로 성공적인 사업을 위해 함께 고민하겠습니다."
       />
